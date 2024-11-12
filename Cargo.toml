@@ -3,4 +3,11 @@ name = "dungeon-rustlers"
 version = "0.1.0"
 edition = "2021"
 
+[workspace]
+members = [ 
+  "dr-map"
+]
+
 [dependencies]
+dr-map = { path = "./dr-map" }
+bracket-lib = "~0.8.1"
