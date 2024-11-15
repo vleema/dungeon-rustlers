@@ -4,18 +4,18 @@ use dr_map::Map;
 const FPS: f32 = 10.0;
 
 struct State {
-    map: Map
+    map: Map,
 }
 
 impl State {
     fn new() -> State {
-        Self { map: Map::new()}
+        Self { map: Map::new() }
     }
 }
 
 impl GameState for State {
     fn tick(&mut self, ctx: &mut bracket_lib::prelude::BTerm) {
-        ctx.cls(); 
+        ctx.cls();
         self.map.render(ctx);
     }
 }

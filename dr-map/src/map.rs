@@ -1,4 +1,7 @@
-use bracket_lib::{color::{BLACK, GREEN, YELLOW}, prelude::{to_cp437, BTerm}};
+use bracket_lib::{
+    color::{BLACK, GREEN, YELLOW},
+    prelude::{to_cp437, BTerm},
+};
 
 use crate::{TileType, NUM_TILES, SCREEN_HEIGHT, SCREEN_WIDTH};
 
@@ -27,7 +30,7 @@ impl Map {
                         ctx.set(x, y, GREEN, BLACK, to_cp437('.'));
                     }
                 }
-            } 
+            }
         }
     }
 }

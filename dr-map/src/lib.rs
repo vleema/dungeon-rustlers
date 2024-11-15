@@ -1,4 +1,3 @@
-
 const SCREEN_WIDTH: usize = 80;
 const SCREEN_HEIGHT: usize = 50;
 const NUM_TILES: usize = SCREEN_WIDTH * SCREEN_HEIGHT;
