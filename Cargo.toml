@@ -10,4 +10,5 @@ members = [ "dr-entity",
 
 [dependencies]
 dr-map = { path = "./dr-map" }
+dr-entity = { path = "./dr-entity/" }
 bracket-lib = "~0.8.1"
