@@ -3,12 +3,7 @@ name = "dungeon-rustlers"
 version = "0.1.0"
 edition = "2021"
 
-[workspace]
-members = [ "dr-entity", 
-  "dr-map"
-]
-
 [dependencies]
-dr-map = { path = "./dr-map" }
-dr-entity = { path = "./dr-entity/" }
-bracket-lib = "~0.8.1"
+crossterm = "0.28.1"
+ratatui = "0.29.0"
+
