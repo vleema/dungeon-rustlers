@@ -1,5 +1,5 @@
-pub const SCREEN_WIDTH: i32 = 80;
-pub const SCREEN_HEIGHT: i32 = 50;
+pub const SCREEN_WIDTH: i32 = 120;
+pub const SCREEN_HEIGHT: i32 = 30;
 pub const NUM_TILES: usize = (SCREEN_WIDTH * SCREEN_HEIGHT) as usize;
 
 #[derive(Debug, Clone, Copy)]
@@ -20,7 +20,7 @@ impl Default for Point {
     }
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq)]
 pub enum TileType {
     Wall,
     Flor,

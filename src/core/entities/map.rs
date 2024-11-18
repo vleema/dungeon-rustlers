@@ -1,12 +1,4 @@
-use ratatui::{
-    style::Color,
-    widgets::canvas::{Context, Rectangle},
-};
-
-use crate::{
-    core::traits::Drawable,
-    shared::{Point, TileType, NUM_TILES, SCREEN_HEIGHT, SCREEN_WIDTH},
-};
+use crate::shared::{Point, TileType, NUM_TILES, SCREEN_HEIGHT, SCREEN_WIDTH};
 
 use super::Map;
 
@@ -21,21 +13,13 @@ impl Map {
         ((y * SCREEN_WIDTH) + x) as usize
     }
 
-    //pub fn render(&self, ctx: &mut BTerm) {
-    //    for y in 0..SCREEN_HEIGHT {
-    //        for x in 0..SCREEN_WIDTH {
-    //            let idx = Self::map_idx(x, y);
-    //            match self.tiles[idx] {
-    //                TileType::Flor => {
-    //                    ctx.set(x, y, YELLOW, BLACK, to_cp437('.'));
-    //                }
-    //                TileType::Wall => {
-    //                    ctx.set(x, y, GREEN, BLACK, to_cp437('.'));
-    //                }
-    //            }
-    //        }
-    //    }
-    //}
+    pub fn equals(p1: Point, p2: Point) -> bool {
+        Self::map_idx(p1.x, p1.y) == Self::map_idx(p2.x, p2.y)
+    }
+
+    pub fn get_tile(&self, idx: usize) -> TileType {
+        self.tiles[idx]
+    }
 
     pub fn in_bounds(&self, point: Point) -> bool {
         point.x >= 0 && point.x < SCREEN_WIDTH && point.y >= 0 && point.y < SCREEN_HEIGHT
@@ -51,32 +35,6 @@ impl Map {
             false => None,
         }
     }
-}
-
-impl Drawable for Map {
-    //fn draw(&self, ctx: &mut Context) {
-    //    for y in 0..SCREEN_HEIGHT {
-    //        for x in 0..SCREEN_WIDTH {
-    //            let idx = Self::map_idx(x, y);
-    //            match self.tiles[idx] {
-    //                TileType::Wall => ctx.draw(&Rectangle {
-    //                    x: x as f64,
-    //                    y: y as f64,
-    //                    width: 1.0,
-    //                    height: 1.0,
-    //                    color: Color::Red,
-    //                }),
-    //                TileType::Flor => ctx.draw(&Rectangle {
-    //                    x: x as f64,
-    //                    y: y as f64,
-    //                    width: 1.0,
-    //                    height: 1.0,
-    //                    color: Color::Green,
-    //                }),
-    //            }
-    //        }
-    //    }
-    //}
 }
 
 impl Default for Map {
